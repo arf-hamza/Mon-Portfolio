@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../includes/head'); %>
+  <title>Portfolio</title>
+</head>
+<body class="container" style="background-color: black;">
+
+<header>
+  <%- include('../includes/header'); %>
+</header>
+
+
+  <main class="mt-1  rounded-3 bg-dark text-white" >
+    <div class="content my-2 mx-3 " >
+      <h1>Mon blogue</h1>
+      <p>Welcome to templating using EJS</p>
+
+      <h2>Mes Projets</h2>
+
+    
+      <ul>
+        
+        <% if (posts.length > 0) { %>
+          <li >
+            <fieldset  style="border-radius: 20px;">
+              
+            <% for (let post of posts) { %> 
+              <h3><%= post.name %></h3>
+              <strong> Réalisé avec <%= post.language %>,
+              en <%= post.year %>.</strong><br>
+              <img src="<%= post.image %>" style="height: 400px; width: 600px; border-radius: 20px;">
+
+          <button class="btn btn-secondary btn-lg ms-5"><a href="/post/<%= post.id %>" style="color: white; text-decoration: none;">Voir plus de détails</a></button>
+            
+          </fieldset>
+          <hr class="border border-black border-1 opacity-75">
+          </li>
+        <% } %>
+      
+      </ul>
+      <%  } %>
+    
+    </div>
+    
+  </main>
+
+<footer>
+  <%- include('../includes/footer'); %>
+</footer>
+
+</body>
+</html>
+

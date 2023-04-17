@@ -1,0 +1,41 @@
+<!-- project-details.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../includes/head'); %>
+  <title>Details</title>
+</head>
+<body class="container" style="background-color: black;">
+
+<header>
+  <%- include('../includes/header'); %>
+</header>
+
+<main class="bg-dark text-white rounded-3">
+  <div class="jumbotron mt-3 mx-3">
+    <h1><%= post.name %> </h1> <br>
+    <h2> <%= post.language %> </h2><br>
+    <h3> <%= post.year %> </h3><br>
+    
+    <iframe src="<%= post.video %>" style="height: 400px; width: 600px; border-radius: 20px;" ></iframe>
+    <strong><p><%= post.description %></p></strong> 
+
+    <!-- <form action="/pages/portfolio">
+      <input class="btn btn-primary btn-lg" type="submit" value="Retour a la page d'acceuil">
+    </form> -->
+
+<!--     <button class="btn btn-primary btn-lg ms-5"><a href="/" style="color: white; text-decoration: none;">Voir plus de détails</a></button>
+ -->
+    <form action="/">
+      <input class="btn btn-secondary btn-lg mb-2" type="submit" value="Retour a la page d'acceuil">
+  </form>
+
+  </div>
+</main>
+
+<footer>
+  <%- include('../includes/footer'); %>
+</footer>
+
+</body>
+</html>
